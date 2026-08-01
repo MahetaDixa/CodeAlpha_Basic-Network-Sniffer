@@ -1,0 +1,28 @@
+Practical Explanation
+
+The program checks the protocol type of every captured packet.
+if packet.haslayer("TCP"):
+
+If it is a TCP packet, the program displays:
+print("Protocol : TCP")
+
+It also prints the source and destination port numbers.
+print(packet["TCP"].sport)
+print(packet["TCP"].dport)
+
+Example output:
+
+Protocol : TCP
+Source Port : 50447
+Destination Port : 443
+
+This indicates that the local computer is communicating with a remote HTTPS server because port 443 is used for secure web communication.
+Similarly, the program captures UDP packets.
+
+Example:
+
+Protocol : UDP
+Source Port : 63108
+Destination Port : 443
+
+This demonstrates how data flows between the source and destination devices and how different protocols such as TCP and UDP are used for different types of communication.
