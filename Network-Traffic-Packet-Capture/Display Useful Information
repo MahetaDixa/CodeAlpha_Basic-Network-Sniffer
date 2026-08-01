@@ -1,0 +1,24 @@
+Practical Explanation
+
+After capturing each packet, the program displays useful network information.
+First, it displays the packet summary.
+print(packet.summary())
+
+Then it displays the source IP address.
+print(packet["IP"].src)
+
+Next, it displays the destination IP address.
+print(packet["IP"].dst)
+
+It also displays the source and destination port numbers.
+print(packet["TCP"].sport)
+print(packet["TCP"].dport)
+
+The packet size is displayed using:
+print(len(packet))
+
+If the packet contains raw data, the payload can also be displayed.
+if packet.haslayer("Raw"):
+    print(packet["Raw"].load)
+
+Displaying this information helps in network monitoring, traffic analysis, troubleshooting, and understanding how data is transmitted over a network.
