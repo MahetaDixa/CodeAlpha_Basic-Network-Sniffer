@@ -1,0 +1,28 @@
+Practical Explanation
+
+This project uses the Scapy library for packet capturing and analysis.
+
+from scapy.all import sniff, get_if_list
+
+Scapy provides several useful functions:
+Get available network interfaces
+get_if_list()
+
+Capture live packets
+sniff()
+
+Display packet summary
+packet.summary()
+
+Check protocol type
+packet.haslayer("TCP")
+
+Retrieve source and destination IP addresses
+packet["IP"].src
+packet["IP"].dst
+
+Retrieve source and destination port numbers
+packet["TCP"].sport
+packet["TCP"].dport
+
+Scapy is a powerful library because it allows easy access to different packet layers and provides detailed packet analysis with very little code.
