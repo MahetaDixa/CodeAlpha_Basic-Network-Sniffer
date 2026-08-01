@@ -1,1 +1,3 @@
-scapy
+Python 3.12
+Scapy
+Npcap
