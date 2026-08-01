@@ -1,0 +1,34 @@
+Prectical Explanation
+
+In this project, I used the Scapy library to capture live network packets. When the program starts, it first displays all the available network interfaces.
+interfaces = get_if_list()
+
+The user selects the desired network interface.
+choice = int(input("Select Interface Number: "))
+selected_iface = interfaces[choice - 1]
+
+Next, the user selects the protocol (TCP, UDP, ICMP, or ALL).
+protocol = input("Enter Protocol (TCP/UDP/ICMP/ALL): ").upper()
+
+The program then captures packets using Scapy's sniff() function.
+sniff(
+    iface=selected_iface,
+    lfilter=packet_filter,
+    prn=packet_callback,
+    store=False
+)
+
+For every captured packet, the packet_callback() function is executed.
+packet_callback(packet)
+
+Inside this function, the packet is analyzed and its summary is displayed.
+print(packet.summary())
+
+For example, the output shows:
+Ether / IPv6 / TCP
+This means:
+•	Ether → Data Link Layer 
+•	IPv6 → Network Layer 
+•	TCP → Transport Layer 
+By analyzing these layers, we can understand the structure and content of each network packet.
+
